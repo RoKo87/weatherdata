@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="weathcss.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-
-alert(city)
 $(document).ready(function(){
+ 
   $("button").click(function(){
+    var city = document.getElementById("cityinput").value;
     $.get("https://api.weatherapi.com/v1/current.json?key=897831dac01542aa959235956221303&q=" + city + "&aqi=no", function(data, status){
       alert("Data: " + data.location.name + "\nStatus: " + status);
     });
@@ -15,9 +15,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-    <script>
-    var city = document.getElementById("cityinput").value;
-    </script>
+    
 <input type="text" id="cityinput">
 <button>city</button>
 
