@@ -8,7 +8,12 @@ $(document).ready(function(){
   $("button").click(function(){
     var city = document.getElementById("cityinput").value;
     $.get("https://api.weatherapi.com/v1/current.json?key=897831dac01542aa959235956221303&q=" + city + "&aqi=no", function(data, status){
-      alert("Data: " + data.location.name + "\nStatus: " + status);
+      document.getElementById("locdata").textContent = "Location: " + data.location.name + ", " + data.location.region + ", " + data.location.country;
+      document.getElementById("citname").textContent = data.location.name;
+      document.getElementById("timedata").textContent = "As of local time: " + data.current.last_updated;
+      document.getElementById("temp").textContent = "Temperature (F/C): " + data.current.temp_f + " / " + data.current.temp_c;
+      document.getElementById("cond").textContent = "Current Condition: " + data.current.condition.text;
+      document.getElementById("highlow").textContent = "High, Low (F/C): " + data.forecast.day.maxtemp_f + " / " + data.forecast.forecastday.day.maxtemp_c + ", " + data.forecast.forecastday.day.mintemp_f + " / " + data.forecast.forecastday.day.mintemp_c;
     });
   });
 });
@@ -17,7 +22,15 @@ $(document).ready(function(){
 <body>
     
 <input type="text" id="cityinput">
-<button>city</button>
+<button>Click!</button>
+<p id="locdata"></p>
+<p id="timedata"></p>
+<h3 id="citname"></h3>
+<h4>Primary Info</h4>
+<p id="temp"></p>
+<p id="cond"></p>
+<p id="highlow"></p>
+<h4></h4>
 
 </body>
 </html>
