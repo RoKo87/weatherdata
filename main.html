@@ -13,7 +13,7 @@ $(document).ready(function(){
       document.getElementById("timedata").textContent = "As of local time: " + data.current.last_updated;
       document.getElementById("temp").textContent = "Temperature (F/C): " + data.current.temp_f + " / " + data.current.temp_c;
       document.getElementById("cond").textContent = "Current Condition: " + data.current.condition.text;
-      document.getElementById("highlow").textContent = "High, Low (F/C): " + data.forecast.day.maxtemp_f + " / " + data.forecast.forecastday.day.maxtemp_c + ", " + data.forecast.forecastday.day.mintemp_f + " / " + data.forecast.forecastday.day.mintemp_c;
+      document.getElementById("highlow").textContent = "High, Low (F/C): " + data.forecast.forecastday.day.maxtemp_f + " / " + data.forecast.forecastday.day.maxtemp_c + ", " + data.forecast.forecastday.day.mintemp_f + " / " + data.forecast.forecastday.day.mintemp_c;
     });
   });
 });
