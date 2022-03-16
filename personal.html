@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel="stylesheet" href="weathcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var tempe;
+    var group;
+    var groupd;
+    var nmode = "a";
+    var ilink;
+
+
+    function nmoding(){
+        if (nmode == "a") {
+            nmode = "n";
+            document.getElementById("nbutton").textContent = "Emo has a nose!"
+        } else if (nmode == "n") {
+            nmode = "a";
+            document.getElementById("nbutton").textContent = "Emo has no nose."
+        }
+    }
+$(document).ready(function(){
+ 
+  $("button").click(function(){
+    var city = document.getElementById("cityinput").value;
+    $.get("https://api.weatherapi.com/v1/current.json?key=897831dac01542aa959235956221303&q=" + city + "&aqi=no", function(data, status){
+    tempe = Math.round(10*(((data.current.feelslike_f - 32)*25)/17))/10;
+      if (tempe < -106) {
+        group = 1;
+        groupd = "I, Cryothermal"
+    } else if (tempe < -80 ) {
+        group = 2;
+        groupd = "II, Gelid"
+    } else if (tempe < -50 ) {
+        group = 3;
+        groupd = "III, Subfrigid"
+    } else if (tempe < -22.5 ) {
+        group = 4;
+        groupd = "IV, Frigid"
+    } else if (tempe < 0 ) {
+        group = 5;
+        groupd = "V, Freezing"
+    } else if (tempe < 20 ) {
+        group = 6; 
+        groupd = "VI, Cold"   
+    } else if (tempe < 40 ) {
+        group = 7;
+        groupd = "VII, Cool" 
+    } else if (tempe < 60 ) {
+        group = 8;
+        groupd = "VIII, Mild" 
+    } else if (tempe < 80 ) {
+        group = 9;
+        groupd = "IX, Warm" 
+    } else if (tempe < 100 ) {
+        group = 10;
+        groupd = "X, Hot" 
+    } else if (tempe < 125 ) {
+        group = 11;
+        groupd = "XI, Sweltering"
+    } else if (tempe >= 125 ) {
+        group = 12;
+        groupd = "XII, Scorching"
+}
+      document.getElementById("locdata").textContent = "Location: " + data.location.name + ", " + data.location.region + ", " + data.location.country;
+      document.getElementById("citname").textContent = data.location.name;
+      document.getElementById("timedata").textContent = "As of local time: " + data.current.last_updated;
+      document.getElementById("temp").textContent = "Temperature (F/C/N): " + data.current.temp_f + " / " + data.current.temp_c + " / " + Math.round(10*(((data.current.temp_f - 32)*25)/17))/10;
+      document.getElementById("cond").textContent = "Current Condition: " + data.current.condition.text;
+      document.getElementById("wind").textContent = "Wind (mph/kmh): " + data.current.wind_mph + " / " + data.current.wind_kph + ", Gust: " + data.current.gust_mph + " / " + data.current.gust_kph + ", Direction: " +data.current.wind_dir;
+      document.getElementById("heatindex").textContent = "Heat Index (F/C/N): " + data.current.feelslike_f + " / " + data.current.feelslike_c + " / " + Math.round(10*(((data.current.feelslike_f - 32)*25)/17))/10;;
+      document.getElementById("grouping").textContent = "Temperature Group: " + groupd;
+      //document.getElementById("highlow").textContent = "High, Low (F/C): " + data.forecast.forecastday.day.maxtemp_f;
+    
+
+      document.getElementById("emo").setAttribute("src", "tempimfowe/" + nmode + group + ".png")
+
+    });
+  });
+});
+
+</script>
+</head>
+<body>
+    
+<input type="text" id="cityinput">
+<button>Click!</button>
+<button id="nbutton" onclick="nmoding();">Emo has no nose.</button>
+<p id="locdata"></p>
+<p id="timedata"></p>
+<h3 id="citname"></h3>
+<img id="emo" src="tempimfowe/a9.png" alt="temp" style="float:right;height:150px">
+<h5 id="temp"></h5>
+<h5 id="cond"></h5>
+<p id="highlow"></p>
+<p id="wind"></p>
+<p id="heatindex"></p>
+<p id="grouping"></p>
+<h4></h4>
+
+</body>
+</html>
