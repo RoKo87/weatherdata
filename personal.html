@@ -13,12 +13,176 @@
     function nmoding(){
         if (nmode == "a") {
             nmode = "n";
-            document.getElementById("nbutton").textContent = "Emo has a nose!"
+            document.getElementById("nbutton").textContent = "Ronos has a nose!"
         } else if (nmode == "n") {
             nmode = "a";
-            document.getElementById("nbutton").textContent = "Emo has no nose."
+            document.getElementById("nbutton").textContent = "Ronos has no nose."
         }
     }
+
+    function consol(){
+        var j = 0.000000000000000005243
+        var ip = -0.000000000000019211
+        var h = 0.000000000020585
+        var g =-0.000000010171
+        var f = 0.0000026692
+        var d = -0.00039291
+        var c = 0.0313601
+        var b = -0.856198
+        var a = 29.4986
+        var i4;
+        var i2;
+        var tem;
+        var sum = 0;
+        var random = 0;
+        var extra = 0;
+        var extre = 0;
+        var min = 0;
+        var max = 0;
+        var highpol = 0;
+        var lowpol = 0;
+        for (var i = 0; i < 365; i++) {
+            i4 = i*i*i*i
+            i2 = i*i
+
+            var dayvar = (-0.00000000004*i4*i) + (0.00000004507*i4) + (-0.000017376*i2*i) + (0.0024504*i2) + (-0.06102*i) + 15.3015; 
+
+            tem = (0.008*i) + (j*i4*i4) + (ip*i4*i2*i) + (h*i4*i2) + (g*i4*i) + (f*i4) + (d*i2*i) + (c*i2) + (b*i) + a;
+            extra = Math.random();
+            sum = (sum + -0.33*(sum));
+            random = Math.round(-5 + 10*(Math.random()));
+
+            if (i < 95) {
+                highpol = -5;
+                lowpol = -2;
+            } else if (i > 130 && i < 260) {
+                highpol = 0;
+                lowpol = 10;
+            } else if (i > 299) {
+                highpol = -5
+                lowpol = -2
+            }
+            if (extra > 0.8) {
+                if (extra > 0.92) {
+                    if (extra > 0.97) {
+                        if (random > 0) {
+                        extre = 10 + highpol;
+                        } else {
+                            extre = -18 + lowpol;
+                        }
+                }
+                    if (random > 0) {
+                    extre = 7 + highpol;
+                    } else {
+                        extre = -12 + lowpol;
+                    }
+                }
+                if (random > 0) {
+                    extre = 5 + highpol;
+
+                } else {
+                    extre = -5 + lowpol;
+                }
+            }
+            sum = sum + random + extre;
+
+            if (sum > max) {
+                max = sum;
+            } 
+
+            if (sum < min) {
+                min = sum;
+            }
+
+            var fin = sum + tem
+
+           console.log(i + ": " + Math.round(fin) + ", " + Math.round(fin+(dayvar/2)) + ", " + Math.round(fin-(dayvar/2)) + ", " + Math.round(dayvar) + "\n base: " + Math.round(tem) + "\n variation: " + Math.round(sum) + ", " + random + ", " + extre+ ", " + Math.round(max) + ", " + Math.round(min));
+           extre = 0;
+
+        }
+    }
+
+    function consol2(){
+        var j = -0.00000000000000018454
+        var ip = 0.00000000000025479
+        var h = -0.00000000013975
+        var g = 0.000000038754
+        var f = -0.00000564245
+        var d = 0.000375195
+        var c = -0.00394202
+        var b = 0.155098
+        var a = -34.5727
+        var i4;
+        var i2;
+        var tem;
+        var sum = 0;
+        var random = 0;
+        var extra = 0;
+        var extre = 0;
+        var min = 0;
+        var max = 0;
+        var highpol = 0;
+        var lowpol = 0;
+        for (var i = 0; i < 365; i++) {
+            i4 = i*i*i*i
+            i2 = i*i
+
+            var dayvar = (-0.000000000007718*i4*i) + (0.000000022543*i4) + (-0.0000134795*i2*i) + (0.00247807*i2) + (-0.07299*i) + 20.8038; 
+
+            tem = (0.004*i) + (j*i4*i4) + (ip*i4*i2*i) + (h*i4*i2) + (g*i4*i) + (f*i4) + (d*i2*i) + (c*i2) + (b*i) + a;
+            extra = Math.random();
+            sum = (sum + -0.33*(sum));
+            random = Math.round(-5 + 10*(Math.random()));
+
+            if (i < 95) {
+                highpol = 7;
+                lowpol = -2;
+            } else if (i > 130 && i < 260) {
+                highpol = 0;
+                lowpol = 10;
+            } else if (i > 299) {
+                highpol = 7
+                lowpol = -2
+            }
+            if (extra > 0.8) {
+                if (extra > 0.92) {
+                    if (extra > 0.97) {
+                        if (random > 0) {
+                        extre = 10 + highpol;
+                        } else {
+                            extre = -18 + lowpol;
+                        }
+                }
+                    if (random > 0) {
+                    extre = 7 + highpol;
+                    } else {
+                        extre = -12 + lowpol;
+                    }
+                }
+                if (random > 0) {
+                    extre = 5 + highpol;
+
+                } else {
+                    extre = -5 + lowpol;
+                }
+            }
+            sum = sum + random + extre;
+
+            if (sum > max) {
+                max = sum;
+            } 
+
+            if (sum < min) {
+                min = sum;
+            }
+
+            var fin = sum + tem
+
+           console.log(i + ": " + Math.round(fin) + ", " + Math.round(fin+(dayvar/2)) + ", " + Math.round(fin-(dayvar/2)) + ", " + Math.round(dayvar) + "\n base: " + Math.round(tem) + "\n variation: " + Math.round(sum) + ", " + random + ", " + extre+ ", " + Math.round(max) + ", " + Math.round(min));
+           extre = 0;
+
+        }
+    } 
 $(document).ready(function(){
  
   $("button").click(function(){
@@ -85,7 +249,9 @@ $(document).ready(function(){
     
 <input type="text" id="cityinput">
 <button>Click!</button>
-<button id="nbutton" onclick="nmoding();">Emo has no nose.</button>
+<button id="nbutton" onclick="nmoding();">Ronos has no nose.</button>
+<button id="console" onclick="consol()">e</button>
+<button id="console2" onclick="consol2()">e'</button>
 <p id="locdata"></p>
 <p id="timedata"></p>
 <h3 id="citname"></h3>
